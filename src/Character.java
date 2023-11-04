@@ -88,13 +88,13 @@ public class Character {
      **/
 
     private String readString(RandomAccessFile raf)throws IOException{
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         //The longest string is 19
         int stringLen = 19;
         for(int i = 0; i < stringLen; i++) {
-            temp += raf.readChar();
+            temp.append(raf.readChar());
         }
-        return temp.trim();
+        return temp.toString().trim();
     }
 
     /** Method Name: writeRecord
@@ -256,6 +256,7 @@ public class Character {
      * Throws/Exceptions: N/A
      **/
     public void changeClass(String newClass) {
+        characterClass = newClass;
         hitPoints = newHitPoints(level);
     }
 

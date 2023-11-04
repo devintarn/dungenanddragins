@@ -7,14 +7,10 @@ import java.util.Scanner;
 
 public class CharacterArray {
     private Character[] characters;
-    private final String binFile = "characters.bin";
+    private String binFile = "characters.bin";
 
     public CharacterArray(int size) {
         characters = new Character[size];
-
-    }
-
-    public CharacterArray() {
 
     }
 
@@ -201,7 +197,7 @@ public class CharacterArray {
 
     private int findCharacter(Scanner scan) {
         System.out.println("Enter the Character's Name:");
-        String name = scan.nextLine();//The name of the character to be deleted
+        String name = scan.nextLine();//The name of the character
         for(int i = 0; i < characters.length; i++) {
             if(characters[i].getCharacterName().equalsIgnoreCase(name)) {
                 return i;
@@ -263,22 +259,21 @@ public class CharacterArray {
      **/
 
     public void addCharacter(Scanner scan)throws IOException{
+        int characterIndex = characters.length;
         Character[] addedCharacters = new Character[characters.length +1];
-        for(int i = 0; i < characters.length; i++) {
-            addedCharacters[i] = characters[i];
-        }
-        addedCharacters[characters.length + 1] = new Character();
+        System.arraycopy(characters, 0, addedCharacters, 0, characters.length);
+        addedCharacters[characterIndex] = new Character();
         System.out.println("Enter the New Character's Name:");
-        addedCharacters[characters.length + 1].setCharacterName(scan.nextLine());
+        addedCharacters[characterIndex].setCharacterName(scan.nextLine());
         System.out.println("Enter the New Character's Race: ");
-        addedCharacters[characters.length + 1].setRace(scan.nextLine());
+        addedCharacters[characterIndex].setRace(scan.nextLine());
         System.out.println("Enter the New Character's Class: ");
-        addedCharacters[characters.length + 1].setCharacterClass(scan.nextLine());
-        addedCharacters[characters.length + 1].setLevel(1);
-        addedCharacters[characters.length + 1].randomStats();
+        addedCharacters[characterIndex].setCharacterClass(scan.nextLine());
+        addedCharacters[characterIndex].setLevel(1);
+        addedCharacters[characterIndex].randomStats();
         characters = addedCharacters;
-        writeACharacter(characters.length + 1);
-        characters[characters.length].print();
+        writeACharacter(characterIndex);
+        characters[characterIndex].print();
 
     }
 
@@ -298,6 +293,8 @@ public class CharacterArray {
             characters[i].print();
         }
     }
+
+
 
     /** Method Name: writeBin
      * Author Devin Tran
@@ -320,6 +317,23 @@ public class CharacterArray {
             raf.close();
         }
         catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void readUserBinaryFile(String fileName){
+        binFile = fileName;
+        readBinaryFile();
+    }
+
+    public void readBinaryFile(){
+        try{
+            RandomAccessFile raf = new RandomAccessFile(binFile,"rw");
+            for(int i = 1; i < characters.length; i++){
+                characters[i] = new Character();
+                characters[i].readRecord(raf,i);
+            }raf.close();
+        }
+        catch(IOException e){
             e.printStackTrace();
         }
     }

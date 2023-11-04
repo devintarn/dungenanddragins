@@ -70,11 +70,61 @@ public class CharacterManager {
         }
         else{
             helper = new CharacterArray(binNumOfRecs(fileName));
-
-        }
+            helper.readUserBinaryFile(fileName);
+        }return helper;
     }
 
-    public static void main(String[] args) {
-
+    private static void menu(Scanner scan)throws IOException{
+        CharacterArray helper = welcome(scan);
+        while(true){
+            System.out.println("Select desired option:\n1.\tRead Text File\n2.\tRead Bin File\n3.\tWrite Bin File\n4.\tPrint Characters\n5.\tAdd Character\n6.\tDelete Character\n7.\tChange Race\n8.\tChange Class\n9.\tUpdate Level\n10.\tUpdate Character Stat\n11.\tSearch Character\n12.\tExit");
+            int option = Integer.parseInt(scan.nextLine());
+            switch(option){
+                case 1:
+                    System.out.println("Enter Name of Text File:");
+                    helper.readTextFile(scan.nextLine());
+                    System.out.println("File has been read. Binary File \"characters.bin\" has been created");
+                    break;
+                case 2:
+                    System.out.println("Enter Name of Binary File");
+                    helper.readUserBinaryFile(scan.nextLine());
+                    break;
+                case 3:
+                    helper.writeBin();
+                    break;
+                case 4:
+                    helper.printCharacters();
+                    break;
+                case 5:
+                    helper.addCharacter(scan);
+                    break;
+                case 6:
+                    helper.deleteCharacter(scan);
+                    break;
+                case 7:
+                    helper.changeRace(scan);
+                    break;
+                case 8:
+                    helper.changeClass(scan);
+                    break;
+                case 9:
+                    helper.levelUp(scan);
+                    break;
+                case 10:
+                    helper.updateStat(scan);
+                    break;
+                case 11:
+                    helper.printCharacter(scan);
+                    break;
+                case 12:
+                    System.exit(0);
+                default:
+                    System.out.println("INVALID INPUT");
+            }
+        }
+    }
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        menu(scan);
     }
 }
