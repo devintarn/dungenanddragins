@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CharacterArray {
     private Character[] characters;
-    private String binFile = "characters.bin";
+    private final String binFile = "characters.bin";
 
     public CharacterArray(int size) {
         characters = new Character[size];
@@ -19,11 +19,12 @@ public class CharacterArray {
     }
 
     /** Method Name: printCharacter
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will delete a selected Character and replace it with bytes
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will delete a selected Character and replace it with bytes
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -34,11 +35,12 @@ public class CharacterArray {
     }
 
     /** Method Name: updateBinaryStat
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will delete a selected Character and replace it with bytes
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will delete a selected Character and replace it with bytes
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -51,11 +53,12 @@ public class CharacterArray {
     }
 
     /** Method Name: statPoints
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will delete a selected Character and replace it with bytes
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will delete a selected Character and replace it with bytes
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -67,11 +70,12 @@ public class CharacterArray {
     }
 
     /** Method Name: updateStat
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will update the selected individual stat
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will update the selected individual stat
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -129,16 +133,17 @@ public class CharacterArray {
     }
 
     /** Method Name: levelUp
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will delete a selected Character and replace it with bytes
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will delete a selected Character and replace it with bytes
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
 
-    public void levelUp(Scanner scan)throws IOException{
+    public void levelUp(Scanner scan){
         int characterIndex = findCharacter(scan);
         if(characterIndex != -1) {
             System.out.println("Enter the Number of Levels:");
@@ -147,15 +152,16 @@ public class CharacterArray {
     }
 
     /** Method Name: changeClass
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description Prompts the user for a new class and will adjust the hit points
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description Prompts the user for a new class and will adjust the hit points
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
-    public void changeClass(Scanner scan)throws IOException{
+    public void changeClass(Scanner scan){
         int characterIndex = findCharacter(scan);
         if(characterIndex != -1) {
             System.out.println("Enter the New Class:\n(Warrior, Cleric, Bard/Ranger/Rogue, Mage");
@@ -164,16 +170,17 @@ public class CharacterArray {
     }
 
     /** Method Name: changeRace
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will prompt the user for a new race and will adjust the stats
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will prompt the user for a new race and will adjust the stats
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
 
-    public void changeRace(Scanner scan)throws IOException{
+    public void changeRace(Scanner scan){
         int characterIndex = findCharacter(scan);
         if(characterIndex != -1) {
             System.out.println("Enter the New Race:\n(Human, Halfling, Elf, Dwarf, Orc, Gnome)");
@@ -182,11 +189,12 @@ public class CharacterArray {
     }
 
     /** Method Name: findCharacter
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will find the index number of a selected character in the array
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will find the index number of a selected character in the array
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -204,11 +212,12 @@ public class CharacterArray {
     }
 
     /** Method Name: deleteCharacter
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description This will delete a selected Character and replace it with bytes
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will delete a selected Character and replace it with bytes
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -226,27 +235,29 @@ public class CharacterArray {
     }
 
     /** Method Name: writeACharacter
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will write a character to the binary file
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
 
-    public void writeACharacter(int i)throws IOException{
+    public void writeACharacter(int charIndex)throws IOException{
         RandomAccessFile randomAccess = new RandomAccessFile(binFile, "rw");
-        randomAccess.seek(i * Character.getRecLen());
-        characters[i].writeRecord(randomAccess, i);
+        randomAccess.seek(charIndex * Character.getRecLen());
+        characters[charIndex].writeRecord(randomAccess, charIndex);
     }
 
     /** Method Name: addCharacter
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description Adds new character to end of binary file while also creating new Character array
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description Adds new character to end of binary file while also creating new Character array
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -272,11 +283,12 @@ public class CharacterArray {
     }
 
     /** Method Name: printCharacters
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description Prints all Characters
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description Prints all Characters
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -288,23 +300,24 @@ public class CharacterArray {
     }
 
     /** Method Name: writeBin
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description Writing the Character array to a binary file
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description Writing the Character array to a binary file
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
 
     public void writeBin(){
         try {
-            RandomAccessFile randomAccess = new RandomAccessFile(binFile, "rw");
-            randomAccess.setLength(Character.getRecLen()*characters.length);
+            RandomAccessFile raf = new RandomAccessFile(binFile, "rw");
+            raf.setLength(Character.getRecLen()*characters.length);
             for(int i = 0; i < characters.length; i++) {
-                characters[i].writeRecord(randomAccess,i);
+                characters[i].writeRecord(raf,i);
             }
-            randomAccess.close();
+            raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
@@ -312,11 +325,12 @@ public class CharacterArray {
     }
 
     /** Method Name: readTextFile
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description Reads text file to then write to a character array and binary file
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description Reads text file to then write to a character array and binary file
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/

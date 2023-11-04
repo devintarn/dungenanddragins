@@ -21,9 +21,8 @@ public class Character {
     private int wisdom; //This is the wisdom of the Character
     private int dexterity; //This is the dexterity of the Character
     private int charisma; //This is the charisma of the Character
-    private Random random; //This is the random that will be used to generate random values
-    private int stringLen = 19; //The longest string is 19
-    private static int recLen = 146;//This the maximum bytes that a record has
+    private final Random random; //This is the random that will be used to generate random values
+    private static final int recLen = 146;//This the maximum bytes that a record has
 
     public Character() {
         this.random = new Random();
@@ -52,11 +51,12 @@ public class Character {
     }
 
     /** Method Name: readRecord
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -77,17 +77,20 @@ public class Character {
     }
 
     /** Method Name: readString
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
 
     private String readString(RandomAccessFile raf)throws IOException{
         String temp = "";
+        //The longest string is 19
+        int stringLen = 19;
         for(int i = 0; i < stringLen; i++) {
             temp += raf.readChar();
         }
@@ -95,11 +98,12 @@ public class Character {
     }
 
     /** Method Name: writeRecord
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -124,11 +128,12 @@ public class Character {
     }
 
     /** Method Name: writeRecord
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -148,11 +153,12 @@ public class Character {
         raf.writeInt(charisma);
     }
     /** Method Name: human
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -192,11 +198,12 @@ public class Character {
     }
 
     /** Method Name: changeRace
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -239,11 +246,12 @@ public class Character {
     }
 
     /** Method Name: changeClass
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -252,11 +260,12 @@ public class Character {
     }
 
     /** Method Name: newHitPoints
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -285,11 +294,12 @@ public class Character {
     }
 
     /** Method Name: levelUp
-     * @Author Devin Tran * @Date 10/10/2023
-     * @Modified 10/10/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -299,11 +309,12 @@ public class Character {
     }
 
     /** Method Name: diceRoll
-     * @Author Devin Tran * @Date 10/02/2023
-     * @Modified 10/02/2023
-     * @Description This method will roll a random number based on the number of sides the die has
-     * @Parameters N/A
-     * @Returns an integer that is the rolled number
+     * Author Devin Tran
+     * Date 10/02/2023
+     * Modified 10/02/2023
+     * Description This method will roll a random number based on the number of sides the die has
+     * Parameters N/A
+     * Returns an integer that is the rolled number
      * Dependencies: Random
      * Throws/Exceptions: N/A
      **/
@@ -312,11 +323,12 @@ public class Character {
     }
 
     /** Method Name: randomStat
-     * @Author Devin Tran * @Date 10/03/2023
-     * @Modified 10/03/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/03/2023
+     * Modified 10/03/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies: Random
      * Throws/Exceptions: N/A
      **/
@@ -343,11 +355,12 @@ public class Character {
     }
 
     /** Method Name: randomStats
-     * @Author Devin Tran * @Date 10/04/2023
-     * @Modified 10/04/2023
-     * @Description
-     * @Parameters N/A
-     * @Returns
+     * Author Devin Tran
+     * Date 10/04/2023
+     * Modified 10/04/2023
+     * Description
+     * Parameters N/A
+     * Returns
      * Dependencies: Random
      * Throws/Exceptions: N/A
      **/
