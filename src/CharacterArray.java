@@ -16,9 +16,9 @@ public class CharacterArray {
 
     /** Method Name: printCharacter
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
-     * Description This will delete a selected Character and replace it with bytes
+     * Date 15/10/2023
+     * Modified 15/10/2023
+     * Description
      * Parameters N/A
      * Returns
      * Dependencies:
@@ -32,9 +32,9 @@ public class CharacterArray {
 
     /** Method Name: updateBinaryStat
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
-     * Description This will delete a selected Character and replace it with bytes
+     * Date 15/10/2023
+     * Modified 15/10/2023
+     * Description
      * Parameters N/A
      * Returns
      * Dependencies:
@@ -50,9 +50,9 @@ public class CharacterArray {
 
     /** Method Name: statPoints
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
-     * Description This will delete a selected Character and replace it with bytes
+     * Date 15/10/2023
+     * Modified 15/10/2023
+     * Description
      * Parameters N/A
      * Returns
      * Dependencies:
@@ -67,8 +67,8 @@ public class CharacterArray {
 
     /** Method Name: updateStat
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
+     * Date 13/10/2023
+     * Modified 13/10/2023
      * Description This will update the selected individual stat
      * Parameters N/A
      * Returns
@@ -130,9 +130,9 @@ public class CharacterArray {
 
     /** Method Name: levelUp
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
-     * Description This will delete a selected Character and replace it with bytes
+     * Date 13/10/2023
+     * Modified 13/10/2023
+     * Description
      * Parameters N/A
      * Returns
      * Dependencies:
@@ -149,8 +149,8 @@ public class CharacterArray {
 
     /** Method Name: changeClass
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
+     * Date 13/10/2023
+     * Modified 13/10/2023
      * Description Prompts the user for a new class and will adjust the hit points
      * Parameters N/A
      * Returns
@@ -298,8 +298,8 @@ public class CharacterArray {
 
     /** Method Name: writeBin
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
+     * Date 11/10/2023
+     * Modified 11/10/2023
      * Description Writing the Character array to a binary file
      * Parameters N/A
      * Returns
@@ -320,11 +320,32 @@ public class CharacterArray {
             e.printStackTrace();
         }
     }
+
+    /** Method Name: readUserBinaryFile
+     * Author Devin Tran
+     * Date: 11/10/2023
+     * Modified: 11/10/2023
+     * Description:
+     * Parameters: N/A
+     * Returns:
+     * Dependencies:
+     * Throws/Exceptions: N/A
+     **/
     public void readUserBinaryFile(String fileName){
         binFile = fileName;
         readBinaryFile();
     }
 
+    /** Method Name: readBinaryFile
+     * Author Devin Tran
+     * Date: 11/10/2023
+     * Modified: 11/10/2023
+     * Description:
+     * Parameters: N/A
+     * Returns:
+     * Dependencies:
+     * Throws/Exceptions: N/A
+     **/
     public void readBinaryFile(){
         try{
             RandomAccessFile raf = new RandomAccessFile(binFile,"rw");
@@ -340,10 +361,10 @@ public class CharacterArray {
 
     /** Method Name: readTextFile
      * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
+     * Date 11/10/2023
+     * Modified 11/10/2023
      * Description Reads text file to then write to a character array and binary file
-     * Parameters N/A
+     * Parameters The file name
      * Returns
      * Dependencies:
      * Throws/Exceptions: N/A

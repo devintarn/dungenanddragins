@@ -10,7 +10,7 @@ public class CharacterManager {
      * Author Devin Tran
      * Date 10/29/2023
      * Modified 10/29/2023
-     * Description
+     * Description This will get the number of record in the binary file
      * Parameters N/A
      * Returns
      * Dependencies:
@@ -32,7 +32,7 @@ public class CharacterManager {
      * Author Devin Tran
      * Date 10/29/2023
      * Modified 10/29/2023
-     * Description
+     * Description This will get the number of records in the text file
      * Parameters N/A
      * Returns
      * Dependencies:
@@ -52,6 +52,7 @@ public class CharacterManager {
         }return fileLines / recLines;
     }
 
+    
     private static CharacterArray welcome(Scanner scan){
         int choice = 0;//This represents that users choice of file to read
         CharacterArray helper;

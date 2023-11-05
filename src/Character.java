@@ -1,7 +1,7 @@
 /**
  * Author: Devin Tran
  * Date: 2023/10/02
- * Description:
+ * Description: This is a representation of a character in D&D. A character will hold a number of unique characteristics
  **/
 import java.util.Random;
 import java.util.Arrays;
@@ -44,6 +44,17 @@ public class Character {
         this.charisma = charisma;
     }
 
+    /** Method Name: print
+     * Author Devin Tran
+     * Date 10/10/2023
+     * Modified 10/10/2023
+     * Description This will print out a character and all of their respected characteristics
+     * Parameters N/A
+     * Returns N/A
+     * Dependencies: N/A
+     * Throws/Exceptions: N/A
+     **/
+
     public void print() {
         System.out.println("Name: " + characterName + "\tRace: " + race + "\tClass: " + characterClass + "\tLevel: " + level +
                 "\tHit Points: " + hitPoints + "\tStrength: " + strength + "\tConstitution: " + constitution +
@@ -54,11 +65,11 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
-     * Returns
-     * Dependencies:
-     * Throws/Exceptions: N/A
+     * Description This will read a character record in the Binary File
+     * Parameters Random accessor to access the binary file, a integer that represents the number of the record
+     * Returns N/A
+     * Dependencies: RandomAccessFile
+     * Throws/Exceptions: IOException
      **/
 
     public void readRecord(RandomAccessFile raf, int recordNums)throws IOException{
@@ -77,14 +88,14 @@ public class Character {
     }
 
     /** Method Name: readString
-     * Author Devin Tran
-     * Date 10/10/2023
-     * Modified 10/10/2023
-     * Description
-     * Parameters N/A
-     * Returns
-     * Dependencies:
-     * Throws/Exceptions: N/A
+     * Author: Devin Tran
+     * Date: 10/10/2023
+     * Modified: 10/10/2023
+     * Description: This will read a string from the Binary File
+     * Parameters: Random accessor
+     * Returns: the string that was read
+     * Dependencies: RandomAccessFile
+     * Throws/Exceptions: IOException
      **/
 
     private String readString(RandomAccessFile raf)throws IOException{
@@ -97,15 +108,15 @@ public class Character {
         return temp.toString().trim();
     }
 
-    /** Method Name: writeRecord
+    /** Method Name: writeString
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
-     * Returns
-     * Dependencies:
-     * Throws/Exceptions: N/A
+     * Description This will write a string to the binary file
+     * Parameters Random accessor
+     * Returns: N/A
+     * Dependencies: RandomAccessFile
+     * Throws/Exceptions: IOException
      **/
 
     private void writeString(RandomAccessFile raf, String string) throws IOException{
@@ -131,11 +142,11 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
-     * Returns
-     * Dependencies:
-     * Throws/Exceptions: N/A
+     * Description This will write a record to the binary file
+     * Parameters Random Accessor, and the record number
+     * Returns N/A
+     * Dependencies: RandomAccessFile
+     * Throws/Exceptions: IOException
      **/
 
     public void writeRecord(RandomAccessFile raf, int recordNums) throws IOException{
@@ -156,10 +167,10 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
+     * Description This will convert the characters race to a human while also adjusting the stat points
      * Parameters N/A
      * Returns
-     * Dependencies:
+     * Dependencies: N/A
      * Throws/Exceptions: N/A
      **/
     private void human() {
@@ -201,8 +212,8 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
+     * Description This will change the characters race while also adjusting the stats
+     * Parameters A string that represents the new race
      * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
@@ -249,8 +260,8 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
+     * Description This will change a characters class while also adjusting the hitPoints
+     * Parameters A string that represents the new class
      * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
@@ -264,9 +275,9 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
-     * Returns
+     * Description This will calculate the new hit points of the character after a class change
+     * Parameters The number of levels that character has
+     * Returns: a int that is the new hit points
      * Dependencies:
      * Throws/Exceptions: N/A
      **/
@@ -298,8 +309,8 @@ public class Character {
      * Author Devin Tran
      * Date 10/10/2023
      * Modified 10/10/2023
-     * Description
-     * Parameters N/A
+     * Description: This will increase the level and hit points of the character accordingly to the number of levels added
+     * Parameters The number of levels
      * Returns
      * Dependencies:
      * Throws/Exceptions: N/A
@@ -327,7 +338,7 @@ public class Character {
      * Author Devin Tran
      * Date 10/03/2023
      * Modified 10/03/2023
-     * Description
+     * Description THis will generate a random stat
      * Parameters N/A
      * Returns
      * Dependencies: Random
@@ -359,7 +370,7 @@ public class Character {
      * Author Devin Tran
      * Date 10/04/2023
      * Modified 10/04/2023
-     * Description
+     * Description This will generate a completely random stat line for the character
      * Parameters N/A
      * Returns
      * Dependencies: Random
